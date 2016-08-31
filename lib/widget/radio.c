@@ -108,8 +108,8 @@ radio_callback (Widget * w, Widget * sender, widget_msg_t msg, int parm, void *d
         }
 
     case MSG_CURSOR:
-        widget_move (r, r->pos, 1);
         widget_set_state (w, WST_FOCUSED, TRUE);
+        widget_move (r, r->pos, 1);
         return MSG_HANDLED;
 
     case MSG_DRAW:

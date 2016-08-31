@@ -301,7 +301,7 @@ widget_set_state (Widget * w, widget_state_t state, gboolean enable)
     {
     case WST_DISABLED:
         ret = send_message (w, NULL, enable ? MSG_DISABLE : MSG_ENABLE, 0, NULL);
-        if (ret == MSG_HANDLED)
+        if (ret == MSG_HANDLED && widget_get_state (WIDGET (w->owner), WST_ACTIVE))
             ret = send_message (w, NULL, MSG_DRAW, 0, NULL);
         break;
 
@@ -311,7 +311,7 @@ widget_set_state (Widget * w, widget_state_t state, gboolean enable)
 
             msg = enable ? MSG_FOCUS : MSG_UNFOCUS;
             ret = send_message (w, NULL, msg, 0, NULL);
-            if (ret == MSG_HANDLED)
+            if (ret == MSG_HANDLED && widget_get_state (WIDGET (w->owner), WST_ACTIVE))
             {
                 send_message (w, NULL, MSG_DRAW, 0, NULL);
                 /* Notify owner that focus was moved from one widget to another */

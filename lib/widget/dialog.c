@@ -899,7 +899,6 @@ add_widget_autopos (WDialog * h, void *w, widget_pos_flags_t pos_flags, const vo
     {
         send_message (widget, NULL, MSG_INIT, 0, NULL);
         widget_set_state (widget, WST_FOCUSED, TRUE);
-        send_message (widget, NULL, MSG_DRAW, 0, NULL);
     }
 
     return widget->id;
