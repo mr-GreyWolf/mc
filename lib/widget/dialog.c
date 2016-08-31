@@ -1142,16 +1142,12 @@ dlg_init (WDialog * h)
         dlg_read_history (h);
     }
 
-    widget_set_state (wh, WST_ACTIVE, TRUE);
-
     /* Select the first widget that takes focus */
     while (h->current != NULL && !widget_get_options (WIDGET (h->current->data), WOP_SELECTABLE)
            && !widget_get_state (WIDGET (h->current->data), WST_DISABLED))
         dlg_set_current_widget_next (h);
 
-    /* focus found widget */
-    widget_set_state (WIDGET (h->current->data), WST_FOCUSED, TRUE);
-
+    widget_set_state (wh, WST_ACTIVE, TRUE);
     dlg_redraw (h);
 
     h->ret_value = 0;
