@@ -75,7 +75,8 @@ check_callback (Widget * w, Widget * sender, widget_msg_t msg, int parm, void *d
             return MSG_NOT_HANDLED;
         c->state ^= C_BOOL;
         c->state ^= C_CHANGE;
-        widget_set_state (w, WST_FOCUSED, TRUE);
+        widget_redraw (w);
+        send_message (w->owner, w, MSG_NOTIFY, (int) MSG_KEY, NULL);
         return MSG_HANDLED;
 
     case MSG_CURSOR:
