@@ -494,6 +494,8 @@ shell/i/.wma
 	Open=@EXTHELPERSDIR@/sound.sh open wma
 	View=%view{ascii} @EXTHELPERSDIR@/sound.sh view wma
 
+shell/i/.cue
+	Open=/usr/lib/mc/ext.d/sound.sh open common
 
 ### Play lists ###
 
