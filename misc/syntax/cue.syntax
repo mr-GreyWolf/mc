@@ -1,0 +1,60 @@
+#
+# Midnight Commander Cue Sheet (CUE) syntax
+# Cue-Sheet Syntax from http://digitalx.org/cue-sheet/syntax/index.html
+#
+
+context default
+    keyword whole CATALOG yellow
+    keyword whole CDTEXTFILE yellow
+    keyword whole FILE yellow
+    keyword whole FLAGS yellow
+    keyword whole INDEX yellow
+    keyword whole ISRC yellow
+    keyword whole PERFORMER yellow
+    keyword whole PREGAP yellow
+    keyword whole POSTGAP yellow
+    keyword whole REM yellow
+    keyword whole SONGWRITER yellow
+    keyword whole TITLE yellow
+    keyword whole TRACK yellow
+
+# FILE
+    keyword whole AIFF brightmagenta
+    keyword whole BINARY brightmagenta
+    keyword whole MOTOROLA brightmagenta
+    keyword whole MP3 brightmagenta
+    keyword whole WAVE brightmagenta
+
+# FLAGS
+    keyword whole DCP brightmagenta
+    keyword whole 4CH brightmagenta
+    keyword whole PRE brightmagenta
+    keyword whole SCMS brightmagenta
+
+# REM
+    keyword whole COMMENT brightgreen
+    keyword whole DATE brightgreen
+    keyword whole DISCID brightgreen
+    keyword whole GENRE brightgreen
+
+context exclusive TRACK \n brightred
+    keyword whole AUDIO brightmagenta
+    keyword whole CDG brightmagenta
+    keyword whole MODE1/2048 brightmagenta
+    keyword whole MODE1/2352 brightmagenta
+    keyword whole MODE2/2336 brightmagenta
+    keyword whole MODE2/2352 brightmagenta
+    keyword whole CDI/2336 brightmagenta
+    keyword whole CDI/2352 brightmagenta
+    keyword whole \{0123456789\}\[0123456789\] brightred
+
+context exclusive INDEX \n brightred
+    keyword \{0123456789\}\{0123456789\}:\{0123456789\}\{0123456789\}:\{0123456789\}\{0123456789\} brightcyan
+
+context exclusive POSTGAP \n brightred
+    keyword \{0123456789\}\{0123456789\}:\{0123456789\}\{0123456789\}:\{0123456789\}\{0123456789\} brightcyan
+
+context exclusive PREGAP \n brightred
+    keyword \{0123456789\}\{0123456789\}:\{0123456789\}\{0123456789\}:\{0123456789\}\{0123456789\} brightcyan
+
+context " " green
