@@ -265,5 +265,8 @@ include puppet.syntax
 file .\*\\.(glsl|vert|frag|geom)$ GLSL\sProgram
 include glsl.syntax
 
+file ..\*\\.cue$ CUE\sFile
+include cue.syntax
+
 file .\* unknown
 include unknown.syntax
